@@ -1,0 +1,34 @@
+version: '3.4'
+
+services:
+  wordpress:
+    image: wordpress
+    restart: always
+    env_file:
+      - ./config/wp.env
+    ports:
+      - 8080:80
+    volumes:
+      - wordpress:/var/www/html
+    networks:
+      - wordpress-network
+    depends_on:
+      - db
+ 
+  db:
+    image: mysql:8.0
+    restart: always
+    env_file:
+      - ./config/db.env
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - wordpress-network
+
+volumes:
+  wordpress:
+  db:
+
+networks:
+  wordpress-network:
+    driver: bridge
