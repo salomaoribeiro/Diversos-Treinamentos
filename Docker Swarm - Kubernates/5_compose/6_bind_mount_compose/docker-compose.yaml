@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  db:
+    build: ./mysql
+    container_name: mysql_compose
+    env_file: 
+      - ./config/db.env
+    restart: always
+    ports:
+      - 3308:3306
+    networks:
+      - rede_flask
+  
+  backend:
+    depends_on:
+      - db
+    build: ./flask
+    container_name: flask_compose
+    volumes:
+      - ./flask/:/app
+    ports:
+      - 5000:5000
+    restart: always 
+    networks:
+      - rede_flask
+
+networks:
+  rede_flask:
+    driver: bridge
+    
