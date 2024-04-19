@@ -1,0 +1,43 @@
+# Instruções para o programa
+nome: 'José das Coves'
+idade: 50
+
+# Este objeto descreve nosso projeto
+objeto:
+  versao: 2
+  arquivo: "teste.txt"
+
+versao: 2
+versao_completa: 2.14.22
+
+string_sem_aspas: Um texto válido
+string_com_aspas: "Outro texto super válido aqui"
+
+dado_nulo: null
+outro_nulo: ~
+
+# booleano true
+verdadeiro_true: True
+verdadeiro_tambem: On
+
+#booleano false
+falso_false: False
+falso_tambem: Off
+
+# arrays/listas
+lista_um: [1, 2, 3, 4, 5]
+lista_dois:
+  - "teste.txt"
+  - "10"
+  - 5
+  - qualquer coisa na lista
+
+# dicionários
+objeto_um: 
+  {a: 1, b: 2, c: 3}
+objeto_dois:
+  a: 1
+  b: 2
+  c:
+    objeto_interno:
+      interno_1: qualquer coisa
